@@ -1,0 +1,22 @@
+{
+  "disallowKeywordsOnNewLine": [],
+  "disallowMixedSpacesAndTabs": true,
+  "disallowMultipleVarDecl": {
+    "allExcept": ["undefined"]
+  },
+  "disallowQuotedKeysInObjects": null,
+  "disallowTrailingComma": true,
+  "preset": "airbnb",
+  "requireCamelCaseOrUpperCaseIdentifiers": null,
+  "requireCapitalizedConstructors": true,
+  "requirePaddingNewLinesAfterBlocks": {
+    "allExcept": ["inCallExpressions", "inNewExpressions", "inArrayExpressions", "inProperties"]
+  },
+  "requirePaddingNewLinesBeforeLineComments": false,
+  "requireParenthesesAroundIIFE": true,
+  "requireSpacesInAnonymousFunctionExpression": null,
+  "requireTrailingComma": null,
+  "safeContextKeyword": null,
+  "validateIndentation": 2,
+  "validateQuoteMarks": "'"
+}

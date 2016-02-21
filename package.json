@@ -1,0 +1,33 @@
+{
+  "name": "cpdf",
+  "version": "0.0.1",
+  "description": "cpdf wrapper for node",
+  "author": "Nathan G <nathan@gnab.fr>",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "jshint index.js && jscs index.js",
+    "test": "mocha test"
+  },
+  "keywords": [
+    "cpdf",
+    "pdf",
+    "node",
+    "wrapper"
+  ],
+  "dependencies": {
+    "debug": "^2.2.0",
+    "q": "^1.4.1",
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jscs": "^2.10.1",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n6g7/node-cpdf.git"
+  },
+  "license": "MIT"
+}

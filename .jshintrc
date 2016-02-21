@@ -1,0 +1,19 @@
+{
+  "eqeqeq": true,
+  "esnext": true,
+  "evil": true,
+  "expr": true,
+  "globals": {
+    "_": true,
+    "$": true,
+    "angular": true,
+    "document": true,
+    "window": true
+  },
+  "latedef": true,
+  "node": true,
+  "nonbsp": true,
+  "undef": true,
+  "unused": true,
+  "varstmt": true
+}
