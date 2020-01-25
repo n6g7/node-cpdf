@@ -26,9 +26,49 @@ function write(blankFile, args, output) {
   .then(() => output);
 }
 
+function pageInfo(filePath, range) {
+  return cpdf('PageInfo', `-page-info ${filePath}${range ? ` ${range}` : ''}`);
+}
+
+/****************************************************************
+ * Check in https://www.coherentpdf.com/cpdfmanual.pdf Page #15 *
+ * cpdf -mediabox "<x> <y> <w> <h>" in.pdf [<range>] -o out.pdf *
+ * args: { newBox: [Number][, range: String] }                  *
+ *   - newBox is required                                       *
+ *   - range is optional                                        *
+ ****************************************************************/
+function mediaBox(filePath, args, output) {
+  output = output || getTemporaryFilePath();
+
+  const box = args.newBox.join(' ');
+  const range = args.range ? ` ${args.range}` : '';
+
+  return cpdf('Modify MediaBox', `-mediabox "${box}" ${filePath}${range} -o ${output}`);
+}
+
+/****************************************************************
+ * Check in https://www.coherentpdf.com/cpdfmanual.pdf Page #15 *
+ * cpdf -crop "<x> <y> <w> <h>" in.pdf [<range>] -o out.pdf     *
+ * Note: -cropbox switch won't work with this older version     *
+ * args: { newBox: [Number][, range: String] }                  *
+ *   - newBox is required                                       *
+ *   - range is optional                                        *
+ ****************************************************************/
+function crop(filePath, args, output) {
+  output = output || getTemporaryFilePath();
+
+  const box = args.newBox.join(' ');
+  const range = args.range ? ` ${args.range}` : '';
+
+  return cpdf('Modify CropBox', `-crop "${box}" ${filePath}${range} -o ${output}`);
+}
+
 module.exports = {
   countPages,
   merge,
   split,
-  write
+  write,
+  pageInfo,
+  mediaBox,
+  crop
 };
