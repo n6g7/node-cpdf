@@ -54,13 +54,13 @@ function mediaBox(filePath, args, output) {
  *   - newBox is required                                       *
  *   - range is optional                                        *
  ****************************************************************/
-function crop(filePath, args, output) {
+function cropBox(filePath, args, output) {
   output = output || getTemporaryFilePath();
 
   const box = args.newBox.join(' ');
   const range = args.range ? ` ${args.range}` : '';
 
-  return cpdf('Modify CropBox', `-crop "${box}" ${filePath}${range} -o ${output}`);
+  return cpdf('Modify CropBox', `-cropbox "${box}" ${filePath}${range} -o ${output}`);
 }
 
 module.exports = {
@@ -70,5 +70,6 @@ module.exports = {
   write,
   pageInfo,
   mediaBox,
-  crop
+  crop: cropBox,
+  cropBox
 };
