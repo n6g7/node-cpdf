@@ -15,8 +15,9 @@ function merge(filePaths, output) {
   .then(() => output);
 }
 
-function split(filePath, dest) {
-  return cpdf('Splitting', `-split ${filePath} -o ${dest}`);
+function split(filePath, dest, chunks = null) {
+  const chunkFlag = (chunks == null) ? '' : `-chunk ${chunks}`
+  return cpdf('Splitting', `-split ${filePath} -o ${dest} ${chunkFlag}`);
 }
 
 function write(blankFile, args, output) {
