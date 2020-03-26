@@ -72,5 +72,6 @@ module.exports = {
   pageInfo,
   mediaBox,
   crop: cropBox,
-  cropBox
+  cropBox,
+  cpdf
 };
