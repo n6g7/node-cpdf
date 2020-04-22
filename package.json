@@ -17,7 +17,7 @@
   "dependencies": {
     "debug": "^2.2.0",
     "q": "^1.4.1",
-    "uuid": "^2.0.1"
+    "uuid": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
