@@ -21,9 +21,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "jscs": "^2.10.1",
+    "jscs": "^3.0.7",
     "jshint": "^2.9.1",
-    "mocha": "^2.4.5"
+    "mocha": "^10.1.0"
   },
   "repository": {
     "type": "git",
